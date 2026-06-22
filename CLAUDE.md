@@ -176,10 +176,41 @@ frontend/
 └── package.json
 ```
 
+## Deployment en GitHub Pages ✅
+
+### Configuración Completada
+- ✅ **vite.config.js**: `base: '/COIPO_EXCEL_PLANMANEJO/'`
+- ✅ **GitHub Actions Workflow**: `.github/workflows/deploy.yml`
+- ✅ **README.md**: Documentación completa
+- ✅ **URL en vivo**: https://sud-austral.github.io/COIPO_EXCEL_PLANMANEJO/
+
+### Cómo Funciona
+1. Cada push a `main` dispara el workflow automáticamente
+2. GitHub Actions instala dependencias con `npm install`
+3. Compila con `npm run build` → genera carpeta `frontend/dist`
+4. GitHub Pages publica automáticamente desde `dist/`
+5. App disponible en ~2-3 minutos
+
+### Pasos Para Publicar Nuevas Versiones
+```bash
+# Hacer cambios en el código
+git add .
+git commit -m "feat: descripción del cambio"
+git push origin main
+# ¡Listo! GitHub Actions hace el resto automáticamente
+```
+
+### Configuración de GitHub Pages
+En el repositorio GitHub:
+1. Settings → Pages
+2. Source: GitHub Actions (ya está configurado)
+3. Branch: main (detectado automáticamente)
+4. Espertar ~2-3 minutos por cada deployment
+
 ## Próximas Mejoras Posibles
 - [ ] Importar datos desde Excel (.xlsx)
 - [ ] Exportar a PDF
-- [ ] Validaciones más estrictas
+- [ ] Validaciones más estrictas según CONAF
 - [ ] Cálculos automáticos (densidad, área basal, volumen)
 - [ ] Integración con backend para persistencia
 - [ ] Autenticación de usuarios
