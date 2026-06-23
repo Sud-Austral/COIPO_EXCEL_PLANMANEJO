@@ -49,7 +49,7 @@ const Home = ({ onNavigate }) => {
 
 const AppContent = () => {
   const [activeSection, setActiveSection] = useState('home');
-  const { exportarJSON, limpiarDatos } = usePlan();
+  const { exportarJSON, exportarPDF, limpiarDatos } = usePlan();
 
   const currentSection = sections.find((s) => s.id === activeSection);
   const CurrentComponent = currentSection?.component;
@@ -62,8 +62,11 @@ const AppContent = () => {
           <p className="app-description">Ley N° 20.283</p>
         </div>
         <div className="header-actions">
+          <button onClick={exportarPDF} className="btn btn-secondary">
+            📄 PDF
+          </button>
           <button onClick={exportarJSON} className="btn btn-secondary">
-            💾 Exportar
+            📋 JSON
           </button>
           <button
             onClick={() => {

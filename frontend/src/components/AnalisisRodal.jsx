@@ -34,11 +34,19 @@ export const AnalisisRodal = () => {
               onChange={(e) => handleChange('tipoForestal', e.target.value)}
               className="input"
             >
-              <option>Lenga</option>
-              <option>Coihue</option>
-              <option>Ñire</option>
-              <option>Araucaria</option>
-              <option>Pino</option>
+              <option value="">Seleccione un tipo forestal</option>
+              <option>Bosques Lenga</option>
+              <option>Bosques Coihue</option>
+              <option>Bosques Ñire</option>
+              <option>Bosques Araucaria</option>
+              <option>Bosques Pino Radiata</option>
+              <option>Bosques Pino Insigne</option>
+              <option>Bosques Eucalipto</option>
+              <option>Bosques Roble</option>
+              <option>Bosques Hualo</option>
+              <option>Bosques Espino</option>
+              <option>Bosques Queñoa</option>
+              <option>Mixtos</option>
               <option>Otro</option>
             </select>
           </FormGroup>
