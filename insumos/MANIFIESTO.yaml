@@ -1,0 +1,104 @@
+archivos:
+
+  - ruta: frontend/package.json
+    sha256: "[PENDIENTE] sin calcular"
+    origen: "[PENDIENTE] quien lo entrego y cuando"
+    contiene_pii: "[VERIFICAR] no se inspeccionaron valores; patron y conteo [PENDIENTE]"
+    puede_versionarse: true
+    uso: unico manifiesto del repositorio; declara las dependencias y los comandos de la interfaz
+
+  - ruta: frontend/package-lock.json
+    sha256: "[PENDIENTE] sin calcular"
+    origen: "[PENDIENTE] quien lo entrego y cuando"
+    contiene_pii: "[VERIFICAR] no se inspeccionaron valores; patron y conteo [PENDIENTE]"
+    puede_versionarse: true
+    uso: fija las versiones exactas resueltas de esas dependencias
+
+  - ruta: frontend/vite.config.js
+    sha256: "[PENDIENTE] sin calcular"
+    origen: "[PENDIENTE] quien lo entrego y cuando"
+    contiene_pii: "[VERIFICAR] no se inspeccionaron valores; patron y conteo [PENDIENTE]"
+    puede_versionarse: true
+    uso: configura la construccion de la interfaz
+
+  - ruta: frontend/eslint.config.js
+    sha256: "[PENDIENTE] sin calcular"
+    origen: "[PENDIENTE] quien lo entrego y cuando"
+    contiene_pii: "[VERIFICAR] no se inspeccionaron valores; patron y conteo [PENDIENTE]"
+    puede_versionarse: true
+    uso: configura la revision automatica de estilo de codigo
+
+  - ruta: .github/workflows/deploy.yml
+    sha256: "[PENDIENTE] sin calcular"
+    origen: "[PENDIENTE] quien lo entrego y cuando"
+    contiene_pii: "[VERIFICAR] no se inspeccionaron valores; patron y conteo [PENDIENTE]"
+    puede_versionarse: true
+    uso: publica la herramienta construida
+
+  - ruta: .github/workflows/readme.yml
+    sha256: "[PENDIENTE] sin calcular"
+    origen: "[PENDIENTE] quien lo entrego y cuando"
+    contiene_pii: "[VERIFICAR] no se inspeccionaron valores; patron y conteo [PENDIENTE]"
+    puede_versionarse: true
+    uso: automatiza la generacion de la documentacion del repositorio
+
+  - ruta: frontend/.gitignore
+    sha256: "[PENDIENTE] sin calcular"
+    origen: "[PENDIENTE] quien lo entrego y cuando"
+    contiene_pii: "[VERIFICAR] no se inspeccionaron valores; patron y conteo [PENDIENTE]"
+    puede_versionarse: true
+    uso: declara que no entra al control de versiones; es el unico del repositorio y esta bajo frontend/
+
+  - ruta: "INSUMO/2016_PM_Nativo Liberado.xlsm"
+    sha256: "[PENDIENTE] sin calcular"
+    origen: "[PENDIENTE] quien lo entrego y cuando"
+    contiene_pii: "[VERIFICAR] planilla con macros, no inspeccionada; una planilla de este tipo suele traer datos del titular del predio; patron y conteo [PENDIENTE]"
+    puede_versionarse: "[VERIFICAR] depende de lo anterior; el repositorio esta declarado publico en la evidencia de origen"
+    uso: es la fuente de la que se derivo el formulario; el archivo mas pesado del repositorio
+
+  - ruta: "INSUMO/indicaciones excel liberado.docx"
+    sha256: "[PENDIENTE] sin calcular"
+    origen: "[PENDIENTE] quien lo entrego y cuando"
+    contiene_pii: "[VERIFICAR] documento binario no inspeccionado; patron y conteo [PENDIENTE]"
+    puede_versionarse: "[VERIFICAR] el repositorio esta declarado publico en la evidencia de origen"
+    uso: instructivo de uso de la planilla anterior
+
+  - ruta: "INSUMO/Consideraciones formulacion PMFBN.pdf"
+    sha256: "[PENDIENTE] sin calcular"
+    origen: "[PENDIENTE] quien lo entrego y cuando"
+    contiene_pii: "[VERIFICAR] documento binario no inspeccionado; patron y conteo [PENDIENTE]"
+    puede_versionarse: "[VERIFICAR] el repositorio esta declarado publico en la evidencia de origen"
+    uso: criterios de formulacion que el formulario intenta reflejar; su caracter normativo es [VERIFICAR]
+
+  - ruta: CAMPOS_FALTANTES.md
+    sha256: "[PENDIENTE] sin calcular"
+    origen: "[PENDIENTE] quien lo entrego y cuando"
+    contiene_pii: "[VERIFICAR] no se inspeccionaron valores; patron y conteo [PENDIENTE]"
+    puede_versionarse: true
+    uso: deja constancia de lo que la herramienta todavia no recoge respecto de la planilla
+
+  - ruta: README.md
+    sha256: "[PENDIENTE] sin calcular"
+    origen: "[PENDIENTE] quien lo entrego y cuando"
+    contiene_pii: "[VERIFICAR] no se inspeccionaron valores; patron y conteo [PENDIENTE]"
+    puede_versionarse: true
+    uso: describe la herramienta y cita una ley por su numero, lo que queda como [VERIFICAR]
+
+  - ruta: frontend/public/favicon.svg
+    sha256: "[PENDIENTE] sin calcular"
+    origen: "[PENDIENTE] quien lo entrego y cuando"
+    contiene_pii: "[VERIFICAR] recurso grafico no inspeccionado; patron y conteo [PENDIENTE]"
+    puede_versionarse: true
+    uso: icono del sitio
+
+  - ruta: frontend/src/assets/hero.png
+    sha256: "[PENDIENTE] sin calcular"
+    origen: "[PENDIENTE] quien lo entrego y cuando"
+    contiene_pii: "[VERIFICAR] imagen no inspeccionada; patron y conteo [PENDIENTE]"
+    puede_versionarse: true
+    uso: imagen de la pantalla de inicio
+
+notas:
+  - "El analizador no detecto variables de entorno, definiciones de tabla ni rutas de servidor en este repositorio: no hay archivo de configuracion de despliegue con secretos que sellar."
+  - "Los tres archivos de la carpeta INSUMO no se abrieron. Son los unicos candidatos serios a contener datos de terceros y por eso su contiene_pii queda en [VERIFICAR] y su puede_versionarse tambien, en vez de darlos por publicables."
+  - "Hallazgo para el informe: el unico archivo que declara exclusiones esta en [frontend/.gitignore]; no hay uno en la raiz. Si alguno de los archivos de INSUMO resultara no publicable, hoy no hay donde anclar la exclusion con barra inicial. Este documento no edita ningun .gitignore."
