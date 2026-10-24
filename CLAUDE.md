@@ -23,14 +23,14 @@ Crear una **herramienta web intuitiva y moderna** basada en el formulario Excel 
 - **State Management**: React Context API (no Redux)
 - **Storage**: localStorage (JSON persistente)
 - **Styling**: CSS puro (sin Tailwind, Bootstrap, Material-UI)
-- **PDF Generation**: jsPDF + html2canvas
+- **PDF Generation**: jsPDF (`html2canvas` está en `package.json` pero no se importa en `frontend/src`)
 - **Deployment**: GitHub Pages (CI/CD automático)
 
 ### Arquitectura de Componentes
 ```
 App.jsx (contenedor principal)
 ├── PlanContext.jsx (estado global)
-├── Sidebar (navegación)
+├── Sidebar (navegación; es un `<nav>` dentro de `App.jsx`, no un archivo propio)
 └── MainContent
     ├── Solicitud.jsx
     ├── Antecedentes.jsx
@@ -42,7 +42,7 @@ App.jsx (contenedor principal)
     
 Componentes Reutilizables:
 ├── FormSection.jsx
-├── FormGroup.jsx
+├── FormGroup / FormRow (exportados desde FormSection.jsx)
 └── EditableTable.jsx
 ```
 
@@ -458,6 +458,8 @@ Total: ~30+ registros de ejemplo
 
 ## 🚀 Guía de Uso
 
+> Comandos verificados en `frontend/package.json`: `dev`, `build`, `lint` (ESLint), `preview`. El `base` de Vite es `/COIPO_EXCEL_PLANMANEJO/` (GitHub Pages): en desarrollo la app queda bajo esa ruta.
+
 ### Para Desarrolladores
 
 ```bash
@@ -485,7 +487,7 @@ npm run preview      # Vista previa del build
 1. **Solicitud** → Datos del solicitante y predio
 2. **Antecedentes** → Información del proyecto y autor
 3. **Rodal** → Características del bosque y parámetros
-4. **Inventario** → Cargar datos de árboles (CSV o manual)
+4. **Inventario** → Cargar datos de árboles (manual; no encontré importación de CSV en el código)
 5. **Diagnóstico** → Análisis cualitativo del estado
 6. **Info Cuantitativa** → Resultados estadísticos del inventario
 7. **Cartografía** → Especificar elementos de mapas
@@ -561,6 +563,6 @@ Principales requisitos para un Plan de Manejo Forestal:
 
 ---
 
-**Última actualización**: Junio 2025
-**Versión**: 1.0 (91% cobertura de campos)
-**Estado**: ✅ **LISTA PARA PRODUCCIÓN**
+**Última actualización del contenido de este documento**: texto original de junio de 2025; revisado contra el código el 2026-10-24 (último commit de código: 2026-09-07).
+**Cobertura de campos**: la tabla de arriba dice 96 %, otra versión decía 91 %, y `CAMPOS_FALTANTES.md` aún marca como faltante lo que aquí figura implementado. Ninguna cifra fue recalculada: pendiente de confirmar por el equipo.
+**Estado**: prototipo publicado en GitHub Pages; sin pruebas automáticas, sin backend y sin autenticación (verificado en el código; no ejecuté la app).
