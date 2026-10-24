@@ -8,18 +8,18 @@ Una herramienta web moderna para simplificar la construcción de planes de manej
 
 ## ✨ Características
 
-- ✅ **8 secciones completas**: Solicitud, Antecedentes, Análisis del Rodal, Inventario, Diagnóstico, Información Cuantitativa, Cartografía
+- ✅ **7 secciones**: Solicitud, Antecedentes, Análisis del Rodal, Inventario, Diagnóstico, Información Cuantitativa, Cartografía
 - ✅ **Tabla de inventario editable**: Agregar/eliminar filas, edición en tiempo real
 - ✅ **Auto-guardado**: Datos guardados automáticamente en localStorage
-- ✅ **Exportación JSON**: Descargar datos para integración con otros sistemas
+- ✅ **Exportación JSON y PDF**: botones en la barra superior (`exportarJSON`, `exportarPDF` en `PlanContext.jsx`, PDF con `jsPDF`)
 - ✅ **Interfaz intuitiva**: Diseño limpio y responsivo (desktop/mobile)
-- ✅ **Sin dependencias externas**: Solo React 19 + Vite
+- ✅ **Pocas dependencias**: React 19 + Vite, más `jspdf` y `html2canvas` (esta última está declarada pero no la encontré importada en `frontend/src`)
 - ✅ **Sin base de datos**: Todo funciona en el navegador
 
 ## 🚀 Instalación y Uso
 
 ### Requisitos
-- Node.js 16+ 
+- Node.js (el workflow de despliegue usa Node 20) 
 - npm o yarn
 
 ### Pasos
@@ -40,7 +40,7 @@ npm run dev
 npm run build
 ```
 
-La app estará disponible en `http://localhost:5173`
+La app estará disponible en `http://localhost:5173/COIPO_EXCEL_PLANMANEJO/` (el `base` de Vite incluye el nombre del repositorio; no lo ejecuté)
 
 ## 📊 Secciones Principales
 
@@ -76,13 +76,23 @@ El proyecto está listo para GitHub Pages. El workflow automático (`.github/wor
 
 **URL de publicación**: `https://sud-austral.github.io/COIPO_EXCEL_PLANMANEJO/`
 
+## 🧪 Pruebas y lint
+
+No hay pruebas automáticas en el repositorio. Existe `npm run lint` (ESLint), ejecutado desde `frontend/`. No ejecuté build ni lint en esta revisión.
+
 ## 🛠️ Tecnologías
 
 - React 19 + Vite
 - Context API para state management
+- `jspdf` para la exportación a PDF
 - CSS puro (sin frameworks)
 - localStorage para persistencia
 - GitHub Pages para hosting
+
+## 📚 Más documentación
+
+[`CLAUDE.md`](CLAUDE.md) (guía técnica y de dominio) · [`insumos/00-PROBLEMA.md`](insumos/00-PROBLEMA.md) · [`insumos/01-SOLUCION.md`](insumos/01-SOLUCION.md) ·
+[`CAMPOS_FALTANTES.md`](CAMPOS_FALTANTES.md) (análisis de campos del Excel; parte de lo que marca como faltante ya figura implementado en `CLAUDE.md`).
 
 ## 📚 Basado en
 
@@ -96,7 +106,7 @@ Las mejoras son bienvenidas. Abre un Issue o Pull Request.
 
 ## 📄 Licencia
 
-MIT License - Ver LICENSE para detalles
+No hay archivo `LICENSE` en el repositorio, así que la licencia está **pendiente de confirmar por el equipo** (versiones anteriores de este README declaraban MIT, y `CLAUDE.md` declara «uso libre para CONAF»).
 
 ---
 
