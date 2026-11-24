@@ -40,6 +40,8 @@ npm run dev
 npm run build
 ```
 
+Verificado el 2026-11-24: `npm install` + `npm run build` pasan. `npm ci` falla porque el lock no está sincronizado (falta `html2canvas`); `npm run lint` da 4 errores (detalle en `CLAUDE.md`).
+
 La app estará disponible en `http://localhost:5173/COIPO_EXCEL_PLANMANEJO/` (el `base` de Vite incluye el nombre del repositorio; no lo ejecuté)
 
 ## 📊 Secciones Principales

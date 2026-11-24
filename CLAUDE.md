@@ -458,6 +458,8 @@ Total: ~30+ registros de ejemplo
 
 ## 🚀 Guía de Uso
 
+> **Estado medido el 2026-11-24:** `npm ci` FALLA porque `frontend/package-lock.json` no está sincronizado con `package.json` (falta `html2canvas@1.4.1` en el lock); por eso el workflow `deploy.yml` usa `npm install`. Con `npm install`, `npm run build` pasa (aviso de chunk grande) y `npm run lint` termina con **4 errores** de base: 3 `react-hooks/static-components` en `src/components/AnalisisRodal.jsx` (componentes creados durante el render) y 1 `react-refresh/only-export-components` en `src/context/PlanContext.jsx`. No hay pruebas.
+>
 > Comandos verificados en `frontend/package.json`: `dev`, `build`, `lint` (ESLint), `preview`. El `base` de Vite es `/COIPO_EXCEL_PLANMANEJO/` (GitHub Pages): en desarrollo la app queda bajo esa ruta.
 
 ### Para Desarrolladores
